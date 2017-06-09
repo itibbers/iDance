@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo" bindtap="tabToMine">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="main">
+    <button class="create-room" type="primary" size="default" bindtap="createRoom" loading="{{loading}}">{{btnName}}</button>
+    <text class="hr">——</text>
+    <input class="input-pin" type="number" bindinput="bindHideKeyboard" placeholder="{{pin ? pin : '请输入PIN码'}}" maxlength="6" cursor-spacing="20" />
+    <button class="join-room" type="primary" size="default" bindtap="joinRoom">加入群组</button>
+  </view>
+</view>

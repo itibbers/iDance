@@ -1,0 +1,67 @@
+<!--创建者模板-->
+<template name="creator">
+  <view class="container">
+    <scroll-view scroll-y="true" enable-back-to-top="true">
+      <view wx:for="{{songs}}" wx:key="{{index}}" class="item">
+        <text class="song-name currentSong" wx:if="{{index+1 == currentSong.id}}">{{index + 1}} {{item.name}}</text>
+        <text class="song-name" wx:if="{{index+1 != currentSong.id}}">{{index + 1}} {{item.name}}</text>
+        <button class="play-button" size="mini" plain="true" bindtap="change" data-id="{{index}}">播放</button>
+      </view>
+    </scroll-view>
+    <view class="page-body-wrapper">
+      <view class="page-body-info">
+        <text>{{currentSong.name}}</text>
+        <text class="time-big">{{formatedPlayTime}}</text>
+        <slider class="slider" min="0" max="{{duration}}" step="1" value="{{playTime}}" bindchange="seek"></slider>
+        <!--<view class="play-time">
+          <text>00:00</text>
+          <text>04:29</text>
+        </view>-->
+      </view>
+      <view class="page-body-buttons">
+        <block wx:if="{{playing === true}}">
+          <view class="page-body-button" bindtap="stop">
+            <image src="/images/stop.png"></image>
+          </view>
+          <view class="page-body-button" bindtap="pause">
+            <image src="/images/pause.png"></image>
+          </view>
+        </block>
+        <block wx:if="{{playing === false}}">
+          <!--<view class="page-body-button"></view>-->
+          <view class="page-body-button" bindtap="play">
+            <image src="/images/play.png"></image>
+          </view>
+        </block>
+        <!--<view class="page-body-button"></view>-->
+      </view>
+    </view>
+  </view>
+</template>
+
+<!--加入者模板-->
+<template name="joiner">
+  <view class="container">
+    <scroll-view scroll-y="true" enable-back-to-top="true">
+      <view wx:for="{{songs}}" wx:key="{{index}}" class="item">
+        <text class="song-name currentSong" wx:if="{{index+1 == currentSong.id}}">{{index + 1}} {{item.name}}</text>
+        <text class="song-name" wx:if="{{index+1 != currentSong.id}}">{{index + 1}} {{item.name}}</text>
+      </view>
+    </scroll-view>
+    <view class="page-body-wrapper">
+      <view class="page-body-info">
+        <text>{{currentSong.name}}</text>
+        <text class="time-big">{{formatedPlayTime}}</text>
+        <slider class="slider" min="0" max="{{duration}}" step="1" value="{{playTime}}" disabled="true"></slider>
+        <!--<view class="play-time">
+          <text>00:00</text>
+          <text>04:29</text>
+        </view>-->
+      </view>
+    </view>
+  </view>
+</template>
+
+
+<!--调用模板-->
+<template is="{{item.roomType == 'creator'?'creator':'joiner'}}" data="{{...item}}" />

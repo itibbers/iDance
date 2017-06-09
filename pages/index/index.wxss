@@ -1,0 +1,39 @@
+/**index.wxss**/
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.main {
+  margin-top: 100rpx;
+}
+
+.input-pin {
+  margin: 10px 0;
+  border: 1px solid #aaa;
+  padding: 10px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 14pt;
+  color: darkslategray;
+}
+
+.hr {
+  display: block;
+  margin: 60rpx 0;
+  color: #aaa;
+  text-align: center;
+}

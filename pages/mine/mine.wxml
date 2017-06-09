@@ -1,0 +1,19 @@
+
+<!--pages/mine/mine.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+
+  <!--<view class="item">我的信息</view>-->
+  <view class="item">
+    <text>我的群组</text>
+  </view>
+  <view class="item">
+    <text>附近群组</text>
+  </view>
+  <view class="item">
+    <text>意见建议</text>
+  </view>
+</view>
