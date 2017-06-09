@@ -3,12 +3,11 @@
  */
 
 // 此处主机域名修改成腾讯云解决方案分配的域名
-// 服务器域名
-var host = '43475800.qcloud.la';
+var host = '';
 
 var config = {
-  appid: 'wx31b28e676b55bb16',
-  secret: 'be51a63bc74bf201514aaf7182f3379b',
+  appid: '',
+  secret: '',
 
   service: {
     host,
