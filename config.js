@@ -6,8 +6,8 @@
 var host = '43475800.qcloud.la';
 
 var config = {
-  appid: '',
-  secret: '',
+  appid: 'wx31b28e676b55bb16',
+  secret: 'be51a63bc74bf201514aaf7182f3379b',
 
   service: {
     host,
